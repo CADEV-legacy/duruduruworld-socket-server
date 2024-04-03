@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "rootDir": ".",
+    "baseUrl": ".",
     "outDir": "build",
-    "baseUrl": "src",
     "target": "es2020",
     "module": "commonjs",
     "strict": true,

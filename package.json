@@ -4,9 +4,12 @@
   "description": "",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon",
-    "build": "tsc",
-    "start": "node build/src/app.js",
+    "dev": "cross-env NODE_ENV=local nodemon",
+    "dev:development": "cross-env NODE_ENV=development nodemon",
+    "dev:stage": "cross-env NODE_ENV=stage nodemon",
+    "dev:product": "cross-env NODE_ENV=product nodemon",
+    "build": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./build/src",
+    "product": "cross-env NODE_ENV=product node build/src/app.js",
     "clear": "rm -r build",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix"
@@ -17,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
@@ -39,6 +43,8 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
     "prettier": "^3.2.5",
+    "tsconfig-paths": "^4.2.0",
+    "tscpaths": "^0.0.9",
     "typescript": "^5.4.3"
   }
 }
