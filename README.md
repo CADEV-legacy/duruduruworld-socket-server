@@ -1,4 +1,4 @@
-# [Star Walkin] Socket.io Template
+# [Star Walkin] Server Template
 
 Project template made by express.
 
@@ -37,6 +37,12 @@ If you want to know more, please check "package.json"
 
 <div style="display: flex; gap: 2rem;">
   <img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" />
+</div>
+
+### Database
+
+<div style="display: flex; gap: 2rem;">
+  <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" />
 </div>
 
 ### Hosting
