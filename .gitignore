@@ -4,3 +4,7 @@ package-lock.json
 
 # build
 build
+
+# environment
+.env
+.env.*
