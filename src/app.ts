@@ -1,19 +1,37 @@
-import dotenv from 'dotenv';
-dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
-import express from 'express';
+import { createServer } from 'http';
 
+import bodyParser from 'body-parser';
+import compression from 'compression';
+import cookieParser from 'cookie-parser';
+import cors, { CorsOptions } from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+import helmet from 'helmet';
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+
+import { morganMiddleware } from '@/middleware';
+import { router } from '@/route';
 import { SETTING } from '@/setting';
+import { logger } from '@/util';
 
 const app = express();
+const httpServer = createServer(app);
 
-app.set('port', SETTING.PORT_NUMBER);
+const corsOption: CorsOptions = {
+  origin: [SETTING.ACCESS_ALLOWED_ORIGIN],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+};
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(cors(corsOption));
+app.use(helmet());
+app.use(compression());
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(SETTING.API_PREFIX, router);
+app.use(morganMiddleware);
 
-app.listen(app.get('port'), () => {
-  console.log(app.get('port'), '번에서 대기중');
-});
-
-export { app };
+httpServer.listen(SETTING.PORT_NUMBER, () =>
+  logger.info(`Server is running on ${SETTING.PORT_NUMBER}`)
+);
