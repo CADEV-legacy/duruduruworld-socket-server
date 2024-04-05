@@ -1,4 +1,4 @@
-# [Star Walkin] Server Template
+# [Star Walkin] Express Template
 
 Project template made by express.
 
