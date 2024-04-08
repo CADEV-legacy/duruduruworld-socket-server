@@ -1,8 +1,8 @@
 const DEFAULT_ENV = 'local';
-const DEFAULT_PORT_NUMBER = 8000;
-const DEFAULT_DOMAIN = 'http://localhost:8000';
+const DEFAULT_PORT_NUMBER = 3000;
+const DEFAULT_DOMAIN = 'http://localhost:3000';
 const DEFAULT_API_PREFIX = '/api';
-const DEFAULT_ACCESS_ALLOWED_ORIGIN = 'http://localhost:3001';
+const DEFAULT_ACCESS_ALLOWED_ORIGIN = 'http://localhost:8000';
 
 export const SETTING = {
   ENV: process.env.NODE_ENV ?? DEFAULT_ENV,

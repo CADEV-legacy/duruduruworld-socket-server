@@ -9,6 +9,8 @@ import express from 'express';
 import helmet from 'helmet';
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
+import { Socket } from './lib';
+
 import { morganMiddleware } from '@/middleware';
 import { router } from '@/route';
 import { SETTING } from '@/setting';
@@ -16,6 +18,7 @@ import { logger } from '@/util';
 
 const app = express();
 const httpServer = createServer(app);
+Socket(httpServer);
 
 const corsOption: CorsOptions = {
   origin: [SETTING.ACCESS_ALLOWED_ORIGIN],

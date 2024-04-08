@@ -3,13 +3,9 @@ export const ROUTE_URL = {
   health: {
     prefix: '/health',
   },
-  auth: {
-    prefix: '/auth',
-  },
-  user: {
-    prefix: '/user',
-  },
-  socker: {
+  socket: {
     prefix: '/socket',
+    health: '/health',
+    newUser: '/new-user',
   },
 } as const;
