@@ -1,16 +1,10 @@
-# [Star Walkin] Express Template
+# [Duruduru] Socket Server
 
 Project template made by express.
 
-### Command for Run
+## Canceled Project
 
-```
-yarn dev
-```
-
-But, in this case, you should request some env variables from other team member or documentations.
-
-If you want to know more, please check "package.json"
+Cancelled project due to contract failure
 
 ## Specifications
 
@@ -56,10 +50,4 @@ If you want to know more, please check "package.json"
 <div style="display: flex; gap: 2rem;">
   <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
   <img src="https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E" />
-</div>
-
-### Docs
-
-<div style="display: flex; gap: 1rem;">
-Will be updated in here.
 </div>
